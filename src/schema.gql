@@ -1,0 +1,183 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserProfileOutput {
+  id: String!
+  username: String!
+  email: String!
+  aboutMe: String
+  birthDate: DateTime
+  gender: Gender!
+  firstName: String!
+  lastName: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+"""The users gender"""
+enum Gender {
+  Male
+  Female
+}
+
+type Comment {
+  id: String!
+  comment: String!
+  author: UserProfileOutput
+  authorId: String
+  asset: Asset!
+  assetId: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type PaginationInfo {
+  total: Float!
+  limit: Float
+  offset: Float
+}
+
+type PaginatedComments {
+  paginationInfo: PaginationInfo
+  comments: [Comment!]
+}
+
+type Asset {
+  id: String!
+  imageUrl: String!
+  title: String!
+  description: String!
+  price: String!
+  lastSale: String
+  createdAt: DateTime!
+  category: String
+  creator: UserProfileOutput
+  creatorId: String
+  owner: UserProfileOutput!
+  ownerId: String!
+  comments(limit: Float = 10, offset: Float = 0, orderBy: OrderBy = {field: "createdAt"}): PaginatedComments
+}
+
+input OrderBy {
+  field: String = "createdAt"
+  direction: String = "DESC"
+}
+
+type User {
+  id: String!
+  username: String!
+  email: String!
+  aboutMe: String
+  firstName: String!
+  lastName: String!
+  balance: Float!
+  birthDate: DateTime!
+  gender: Gender!
+  assets: [Asset!]!
+}
+
+type PaginatedAssets {
+  paginationInfo: PaginationInfo
+  assets: [Asset!]!
+}
+
+type AccessTokenOutput {
+  accessToken: String!
+}
+
+type WalletOutput {
+  id: String!
+  address: String!
+  balance: Float!
+  owner: User!
+  ownerId: String!
+  coin: Coin!
+}
+
+"""Coin type"""
+enum Coin {
+  CalapeCoin
+  ArgCoin
+  PhilipCoin
+}
+
+type TransactionOutput {
+  id: String!
+  coin: Coin!
+  amount: Float!
+  createdAt: DateTime!
+  asset: Asset!
+  assetId: String!
+  buyer: UserProfileOutput!
+  seller: UserProfileOutput!
+}
+
+type Query {
+  viewWallet: WalletOutput!
+  getUserProfile(id: String!): UserProfileOutput!
+  getAllAssets(limit: Float = 10, offset: Float = 0, orderBy: OrderBy = {field: "createdAt"}, searchTerm: String!): PaginatedAssets!
+  getAssetById(assetId: ID!): Asset!
+  login(loginInput: LoginInput!): AccessTokenOutput!
+  viewTransactions: [TransactionOutput!]!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+type Mutation {
+  updateUser(updateUserInput: UpdateUserInput!): UserProfileOutput!
+  deleteUser(userId: String!): UserProfileOutput!
+  restoreDeletedUser(userId: String!): UserProfileOutput!
+  createComment(createCommentInput: CreateCommentInput!): Comment!
+  updateComment(updateCommentInput: UpdateCommentInput!): Comment!
+  deleteComment(commentId: String!): Comment!
+  createAsset(createAssetInput: CreateAssetInput!): Asset!
+  deleteAsset(id: ID!): Asset!
+  restoreDeletedAsset(id: ID!): Asset!
+  register(registerUserInput: RegisterUserInput!): User!
+  buyAsset(assetId: String!): TransactionOutput!
+}
+
+input UpdateUserInput {
+  username: String
+  firstName: String
+  lastName: String
+  email: String
+  aboutMe: String
+  birthDate: DateTime
+  gender: Gender
+}
+
+input CreateCommentInput {
+  comment: String!
+  assetId: String!
+}
+
+input UpdateCommentInput {
+  id: String!
+  comment: String!
+}
+
+input CreateAssetInput {
+  imageUrl: String!
+  title: String!
+  description: String!
+  category: String!
+  price: Float!
+}
+
+input RegisterUserInput {
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  birthDate: DateTime
+  gender: Gender
+}
