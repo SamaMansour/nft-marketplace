@@ -21,10 +21,7 @@ __decorate([
     __metadata("design:type", String)
 ], AssetEntity.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ transformer: {
-            to: (value) => Buffer.from(value),
-            from: (value) => value.toString()
-        } }),
+    (0, typeorm_1.Column)("bytea", { nullable: true }),
     __metadata("design:type", String)
 ], AssetEntity.prototype, "imageUrl", void 0);
 __decorate([
@@ -39,6 +36,14 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'numeric', precision: 15, scale: 6, default: 0 }),
     __metadata("design:type", Number)
 ], AssetEntity.prototype, "price", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], AssetEntity.prototype, "royalties", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], AssetEntity.prototype, "size", void 0);
 __decorate([
     (0, typeorm_1.Column)({ default: null, type: 'timestamptz' }),
     __metadata("design:type", Date)

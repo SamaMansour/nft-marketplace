@@ -19,6 +19,12 @@ export class Asset {
   @Field()
   price: string;
 
+  @Field()
+  size: string;
+
+  @Field()
+  royalties: string;
+
   @Field({ nullable: true })
   lastSale?: string;
 

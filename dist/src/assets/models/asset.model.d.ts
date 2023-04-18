@@ -6,6 +6,8 @@ export declare class Asset {
     title: string;
     description: string;
     price: string;
+    size: string;
+    royalties: string;
     lastSale?: string;
     createdAt: Date;
     category?: string;

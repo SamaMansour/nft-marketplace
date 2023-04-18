@@ -7,6 +7,8 @@ export declare class AssetEntity extends BaseModel {
     title: string;
     description: string;
     price: number;
+    royalties: string;
+    size: string;
     lastSale: Date;
     category: string;
     owner: UserEntity;

@@ -36,6 +36,14 @@ __decorate([
     __metadata("design:type", String)
 ], Asset.prototype, "price", void 0);
 __decorate([
+    (0, graphql_1.Field)(),
+    __metadata("design:type", String)
+], Asset.prototype, "size", void 0);
+__decorate([
+    (0, graphql_1.Field)(),
+    __metadata("design:type", String)
+], Asset.prototype, "royalties", void 0);
+__decorate([
     (0, graphql_1.Field)({ nullable: true }),
     __metadata("design:type", String)
 ], Asset.prototype, "lastSale", void 0);

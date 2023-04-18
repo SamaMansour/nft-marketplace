@@ -21,10 +21,7 @@ export class AssetEntity extends BaseModel {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({transformer: {
-      to: (value: string) => Buffer.from(value),
-      from: (value: Buffer) => value.toString()
-    }})
+  @Column("bytea", { nullable: true })
   imageUrl: string;
 
   @Column()
@@ -35,6 +32,12 @@ export class AssetEntity extends BaseModel {
 
   @Column({ type: 'numeric', precision: 15, scale: 6, default: 0 })
   price: number;
+
+  @Column()
+  royalties: string;
+
+  @Column()
+  size: string;
 
   @Column({ default: null, type: 'timestamptz' })
   lastSale: Date;
