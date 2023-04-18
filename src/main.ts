@@ -19,9 +19,9 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(3000);
+  await app.listen(9000);
 
-  expressListRoutes(app.getHttpServer()._events.request._router);
+  // expressListRoutes(app.getHttpServer()._events.request._router);
 }
 bootstrap();
 /* TODO: Important

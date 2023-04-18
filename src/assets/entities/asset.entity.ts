@@ -12,6 +12,8 @@ import {
 import { CommentEntity } from '../../comments/entities/comment.entity';
 import { BaseModel } from '../../common/models/base.model';
 import { UserEntity } from '../../users/entities/user.entity';
+import { Transform } from 'class-transformer';
+
 
 @Entity('asset')
 @Check('"price" >= 0')
@@ -19,7 +21,10 @@ export class AssetEntity extends BaseModel {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({transformer: {
+      to: (value: string) => Buffer.from(value),
+      from: (value: Buffer) => value.toString()
+    }})
   imageUrl: string;
 
   @Column()

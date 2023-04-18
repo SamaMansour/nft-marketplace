@@ -21,7 +21,10 @@ __decorate([
     __metadata("design:type", String)
 ], AssetEntity.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ transformer: {
+            to: (value) => Buffer.from(value),
+            from: (value) => value.toString()
+        } }),
     __metadata("design:type", String)
 ], AssetEntity.prototype, "imageUrl", void 0);
 __decorate([
