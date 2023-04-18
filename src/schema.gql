@@ -172,6 +172,8 @@ input CreateAssetInput {
   description: String!
   category: String!
   price: Float!
+  size: String!
+  royalties: String!
 }
 
 input RegisterUserInput {

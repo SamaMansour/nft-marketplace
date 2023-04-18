@@ -25,4 +25,11 @@ export class CreateAssetInput {
   @IsPositive()
   @Field()
   readonly price: number;
+  @Field()
+  @Length(1, 255)
+  readonly size: string;
+
+  @Field()
+  @Length(1, 255)
+  readonly royalties: string;
 }

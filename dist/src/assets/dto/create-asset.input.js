@@ -45,6 +45,16 @@ __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", Number)
 ], CreateAssetInput.prototype, "price", void 0);
+__decorate([
+    (0, graphql_1.Field)(),
+    (0, class_validator_1.Length)(1, 255),
+    __metadata("design:type", String)
+], CreateAssetInput.prototype, "size", void 0);
+__decorate([
+    (0, graphql_1.Field)(),
+    (0, class_validator_1.Length)(1, 255),
+    __metadata("design:type", String)
+], CreateAssetInput.prototype, "royalties", void 0);
 CreateAssetInput = __decorate([
     (0, graphql_1.InputType)()
 ], CreateAssetInput);
