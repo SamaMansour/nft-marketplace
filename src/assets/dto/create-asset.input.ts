@@ -1,5 +1,5 @@
-import { Field, InputType } from '@nestjs/graphql';
-import { IsNumber, IsPositive, Length } from 'class-validator';
+import { Field, InputType, GraphQLISODateTime } from '@nestjs/graphql';
+import { IsNumber, IsPositive, Length, IsDate } from 'class-validator';
 import { IsImageUrl } from '../../common/input-validation/is-image-url.decorator';
 
 @InputType()
@@ -32,4 +32,12 @@ export class CreateAssetInput {
   @Field()
   @Length(1, 255)
   readonly royalties: string;
+
+  @Field({ nullable: true })
+  @IsDate()
+  startingDate: Date;
+
+  @Field({ nullable: true })
+  @IsDate()
+  endingDate: Date;
 }

@@ -55,6 +55,8 @@ type Asset {
   size: String!
   royalties: String!
   lastSale: String
+  startingDate: String
+  endingDate: String
   createdAt: DateTime!
   category: String
   creator: UserProfileOutput
@@ -174,6 +176,8 @@ input CreateAssetInput {
   price: Float!
   size: String!
   royalties: String!
+  startingDate: DateTime
+  endingDate: DateTime
 }
 
 input RegisterUserInput {

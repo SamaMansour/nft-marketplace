@@ -10,6 +10,8 @@ export declare class AssetEntity extends BaseModel {
     royalties: string;
     size: string;
     lastSale: Date;
+    startingDate: Date;
+    endingDate: Date;
     category: string;
     owner: UserEntity;
     creator: UserEntity;

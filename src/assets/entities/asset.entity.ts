@@ -42,6 +42,12 @@ export class AssetEntity extends BaseModel {
   @Column({ default: null, type: 'timestamptz' })
   lastSale: Date;
 
+  @Column({ default: null, type: 'timestamptz' })
+  startingDate: Date;
+
+  @Column({ default: null, type: 'timestamptz' })
+  endingDate: Date;
+
   @Column()
   category: string;
 

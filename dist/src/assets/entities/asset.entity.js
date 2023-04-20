@@ -49,6 +49,14 @@ __decorate([
     __metadata("design:type", Date)
 ], AssetEntity.prototype, "lastSale", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ default: null, type: 'timestamptz' }),
+    __metadata("design:type", Date)
+], AssetEntity.prototype, "startingDate", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: null, type: 'timestamptz' }),
+    __metadata("design:type", Date)
+], AssetEntity.prototype, "endingDate", void 0);
+__decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], AssetEntity.prototype, "category", void 0);

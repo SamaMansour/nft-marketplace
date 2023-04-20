@@ -48,6 +48,14 @@ __decorate([
     __metadata("design:type", String)
 ], Asset.prototype, "lastSale", void 0);
 __decorate([
+    (0, graphql_1.Field)({ nullable: true }),
+    __metadata("design:type", String)
+], Asset.prototype, "startingDate", void 0);
+__decorate([
+    (0, graphql_1.Field)({ nullable: true }),
+    __metadata("design:type", String)
+], Asset.prototype, "endingDate", void 0);
+__decorate([
     (0, graphql_1.Field)(() => graphql_1.GraphQLISODateTime),
     __metadata("design:type", Date)
 ], Asset.prototype, "createdAt", void 0);

@@ -55,6 +55,16 @@ __decorate([
     (0, class_validator_1.Length)(1, 255),
     __metadata("design:type", String)
 ], CreateAssetInput.prototype, "royalties", void 0);
+__decorate([
+    (0, graphql_1.Field)({ nullable: true }),
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], CreateAssetInput.prototype, "startingDate", void 0);
+__decorate([
+    (0, graphql_1.Field)({ nullable: true }),
+    (0, class_validator_1.IsDate)(),
+    __metadata("design:type", Date)
+], CreateAssetInput.prototype, "endingDate", void 0);
 CreateAssetInput = __decorate([
     (0, graphql_1.InputType)()
 ], CreateAssetInput);

@@ -6,4 +6,6 @@ export declare class CreateAssetInput {
     readonly price: number;
     readonly size: string;
     readonly royalties: string;
+    startingDate: Date;
+    endingDate: Date;
 }

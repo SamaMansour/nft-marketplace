@@ -9,6 +9,8 @@ export declare class Asset {
     size: string;
     royalties: string;
     lastSale?: string;
+    startingDate?: string;
+    endingDate?: string;
     createdAt: Date;
     category?: string;
     creator?: UserProfileOutput;

@@ -28,6 +28,13 @@ export class Asset {
   @Field({ nullable: true })
   lastSale?: string;
 
+  @Field({ nullable: true })
+  startingDate?: string;
+
+
+  @Field({ nullable: true })
+  endingDate?: string;
+
   @Field(() => GraphQLISODateTime)
   createdAt: Date;
 
